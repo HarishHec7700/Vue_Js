@@ -1,0 +1,18 @@
+Components in Vue Basics :
+    A Componenet in Vue consists of three parts they are 
+        1.Template part , they are responsible for the changes in the UI , i.e they contains the HTML part of the UI  
+        2.Script Part , they hold up the functionality of the component like the Javascript part 
+        3.Style Part , they hold up the style and designing of the html tags etc for the component 
+
+
+    Binding text : 
+        1.Text Interpolation by using Mustache syntax
+        2.Directive method 
+
+        1.Text Interpolation :
+            Here we render the text are the information that is present in the script for dynamic changing purpose by using the Mustache Syntax which is "{{ variable name}}" inside which we will be giving the variable  that is used in the script part ;
+            There can be as many as mustache syntax in a component     
+
+        2. Directive Method:
+            In this method we will be using the v-text attribute in the element in which the text to be render on.Here we 
+        
