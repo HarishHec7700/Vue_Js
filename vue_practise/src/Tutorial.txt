@@ -1,3 +1,5 @@
+Command for running Vue app: npm run serve
+
 Components in Vue Basics :
     A Componenet in Vue consists of three parts they are 
         1.Template part , they are responsible for the changes in the UI , i.e they contains the HTML part of the UI  
@@ -16,3 +18,39 @@ Components in Vue Basics :
         2. Directive Method:
             In this method we will be using the v-text attribute in the element in which the text to be render on.Here we 
         
+    Binding HTML :
+        In some scenerio we will have to render a Html code into the webpage directly so for that purpose we will be using the HTML directive the  "v-html" along with the initialisation of the variable   
+        ex:<span v-html="binHtml"></span>
+
+    Binding Attribute :
+        In Vue we can add the attribute also using the bind method ,we can bind id,name etc and some boolean attributes like disabled,required etc. For that we will be using a attributecalled "v-bind"
+        ex: <p v-bind:id="className"> for value attributes
+        ex:<button v-bind:disabled="isDisabled">NO</button>
+
+    Binding Classes :
+        In Vue we can bind the class into the html element .Here there are two types of classes they are static (those that are pre-defined in the template area ) and the dynamic class are 
+        those that are changed dynamically by the users
+
+        Example
+        data(){
+            return{
+            isDisabled:true,
+            isActive:true,
+            status:"warning"
+        } 
+
+        <template>
+            <h2 :class="{isActive}">Welcome</h2>
+        </template>      
+
+        So here we can see the isActive class is binded to the h2 tag
+
+        <template>
+            <h2 :class="{active:isActive,disabled:isDisabled}">Welcome</h2>
+        </template>
+
+        So now you can see that the h2 element will have both classes active and disabled 
+        if the isDisabled value is false then only active will apply 
+
+    Binding Styles :
+        In VueJS we can bind the styles into the html element by the "v-bind:style" 
