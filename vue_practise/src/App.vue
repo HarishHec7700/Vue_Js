@@ -16,13 +16,32 @@
 
     <!-- Object Style Binding -->
     <!-- We use object style binding only when u have many styles to bind -->
-    <h4
-      :style="objStyle"
-    >Object Style Binding</h4>
-  <h4
-      :style="[objStyle,backStyle]" 
-    >Array of Object Style Binding</h4>
+    <h4 :style="objStyle">Object Style Binding</h4>
+    <h4 :style="[objStyle,backStyle]">Array of Object Style Binding</h4>
     <!-- If any style is common then the last style will apply  -->
+
+    <!-- Conditional Rendering  -->
+
+    <h4 v-if="condi==2">This is Conditional Rendering Statement</h4>
+    <h4 v-if="condi==0">Input is zero</h4>
+    <h4 v-else-if="condi<0">Input is negative</h4>
+    <h4 v-else>Input is positive</h4>
+    <h4 v-show="backStyle.value">There is a value</h4>
+
+    <!-- List Rendering in VueJs (Array) -->
+    <h5>List Rendering in the Vue Js Using v-for for Array</h5>
+    <ul>
+      <li v-for="(name,index) in names" :key="index">{{name}}</li>
+    </ul>
+
+    <!-- List Rendering in VueJs (Array of Objects) -->
+    <h5>List Rendering in the Vue Js Using v-for for Array of Objects</h5>
+    <li v-for="(detail,index) in details" :key="index">
+      This is {{ detail.name }}.
+      <span v-if="detail.gender=='Male'">He</span>
+      <span v-if="detail.gender=='Female'">She</span>
+      is a {{ detail.occ }} and lives in {{detail.city}}
+    </li>
   </div>
   <!-- here {{   }} is the mustache syntax the method of binding text using mustache syntax is called text interpolation  -->
 </template>
@@ -52,9 +71,37 @@ export default {
       },
       backStyle: {
         padding: "20px",
+        value: false,
         backgroundColor: "green",
-        border:"solid 5px #000"
-      }
+        border: "solid 5px #000"
+      },
+      // Conditoinal Rendering in VueJs
+      condi: -2,
+
+      // List Rendering (Array) in VueJS
+      names: ["Victor", "Julie", "Havana", "Beyonce"],
+
+      // List Rendering (Array of Objects ) in VueJS
+      details: [
+        {
+          name: "Victor",
+          occ: "Gangster",
+          city: "Chennai",
+          gender: "Male"
+        },
+        {
+          name: "Julie",
+          occ: "Actress",
+          city: "NewYork",
+          gender: "Female"
+        },
+        {
+          name: "Beyonce",
+          occ: "Singer",
+          city: "Kamamedu",
+          gender: "Female"
+        }
+      ]
     };
   }
 };
